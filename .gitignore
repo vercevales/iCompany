@@ -5,12 +5,12 @@
 
 #IDEA Intellij
 .idea
-/.idea/*
+*/.idea/*
 *.iml
 
 Maven
-/target
-/target/*
+*/target/
+*/target/*
 
 # Package Files #
 *.jar
