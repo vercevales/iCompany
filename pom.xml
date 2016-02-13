@@ -26,9 +26,12 @@
         <servlet.version>2.5</servlet.version>
         <jsf.version>2.2.10</jsf.version>
         <primefaces.version>5.3</primefaces.version>
+        <primefaces.themes.version>1.0.10</primefaces.themes.version>
+        <omnifaces.version>1.10</omnifaces.version>
         <commons.lang.version>3.4</commons.lang.version>
         <org.slf4j-version>1.7.5</org.slf4j-version>
     </properties>
+
 
     <dependencyManagement>
         <dependencies>
@@ -147,11 +150,23 @@
                 <version>${jsf.version}</version>
             </dependency>
 
-            <!--Primefaces dependecies-->
+            <!--Primefaces dependencies-->
             <dependency>
                 <groupId>org.primefaces</groupId>
                 <artifactId>primefaces</artifactId>
                 <version>${primefaces.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.primefaces.themes</groupId>
+                <artifactId>all-themes</artifactId>
+                <version>${primefaces.themes.version}</version>
+            </dependency>
+
+            <!--OmniFaces dependencies-->
+            <dependency>
+                <groupId>org.omnifaces</groupId>
+                <artifactId>omnifaces</artifactId>
+                <version>${omnifaces.version}</version>
             </dependency>
 
             <!-- Logging -->
