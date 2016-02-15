@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/pages/templates/template.xhtml">
+
+    <ui:param name="title" value="Strona główna"/>
+
+    <ui:define name="content">
+        <h:form>
+            <p:panel header="Nowy Kontraktor">
+                <p:messages autoUpdate="true"/>
+
+                <h:panelGrid id="grid" columns="4" cellpadding="5">
+                    <h:outputLabel for="name" value="Nazwa Firmy:" style="font-weight:bold"/>
+                    <p:inputText id="name" value="#{addContractor.text}" required="true" label="Nazwa Firmy"/>
+                    <p:message for="name" />
+                    <h:outputText value="#{addContractor.text}" />
+
+                    <h:outputLabel for="number" value="Number:" style="font-weight:bold"/>
+                    <p:inputText id="number" value="#{addContractor.integer}" label="Number">
+                        <f:validateDoubleRange minimum="5" maximum="8" />
+                    </p:inputText>
+                    <p:message for="number" />
+                    <h:outputText value="#{addContractor.integer}" />
+
+                    <h:outputLabel for="dd" value="Double:" style="font-weight:bold"/>
+                    <p:inputText id="dd" value="#{addContractor.doubleNumber}" converterMessage="Cannot convert to double.">
+                        <f:validateDoubleRange minimum="5.5" maximum="8.5" />
+                    </p:inputText>
+                    <p:message for="dd" />
+                    <h:outputText value="#{addContractor.doubleNumber}" />
+
+                    <h:outputLabel for="money" value="Currency ($):" style="font-weight:bold"/>
+                    <p:inputText id="money" value="#{addContractor.money}" label="Currency">
+                        <f:convertNumber type="currency" currencySymbol="$"/>
+                    </p:inputText>
+                    <p:message for="money" />
+                    <h:outputText value="#{addContractor.money}">
+                        <f:convertNumber  type="currency" currencySymbol="$" />
+                    </h:outputText>
+
+                    <h:outputLabel for="regex" value="Regex (^[a-zA-Z]+$):" style="font-weight:bold"/>
+                    <p:inputText id="regex" value="#{addContractor.regexText}" validatorMessage="Value does not match pattern.">
+                        <f:validateRegex pattern="^[a-zA-Z]+$" />
+                    </p:inputText>
+                    <p:message for="regex" />
+                    <h:outputText value="#{addContractor.regexText}" />
+
+                    <h:outputLabel for="date" value="Date" style="font-weight:bold"/>
+                    <p:inputText id="date" value="#{addContractor.date}" label="Date">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </p:inputText>
+                    <p:message for="date" />
+                    <h:outputText value="#{addContractor.date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                    <h:outputLabel for="desc" value="Description" style="font-weight:bold"/>
+                    <p:inputTextarea id="desc" value="#{addContractor.description}" required="true" label="Description">
+                        <f:validateLength minimum="3" maximum="10" />
+                    </p:inputTextarea>
+                    <p:message for="desc" />
+                    <h:outputText value="#{addContractor.description}" />
+                </h:panelGrid>
+
+                <p:commandButton value="Non-Ajax" ajax="false" icon="ui-icon-check" validateClient="true" style="margin-right:10px"/>
+                <p:commandButton value="Ajax" update="grid" icon="ui-icon-check" validateClient="true" style="margin-right:10px"/>
+                <p:commandButton value="Partial" update="grid" process="name number" validateClient="true" icon="ui-icon-check" style="margin-right:10px"/>
+                <p:commandButton value="Disabled" ajax="false" icon="ui-icon-check" />
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
