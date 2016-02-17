@@ -12,5 +12,18 @@
     <artifactId>model</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <!--Hibernate dependencies-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
