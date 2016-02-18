@@ -15,60 +15,28 @@
 
                 <h:panelGrid id="grid" columns="4" cellpadding="5">
                     <h:outputLabel for="name" value="Nazwa Firmy:" style="font-weight:bold"/>
-                    <p:inputText id="name" value="#{addContractor.text}" required="true" label="Nazwa Firmy"/>
+                    <p:inputText id="name" value="#{addContractorBean.companyName}" required="true"
+                                 label="Nazwa Firmy"/>
                     <p:message for="name" />
-                    <h:outputText value="#{addContractor.text}" />
+                    <h:outputText value="#{addContractorBean.companyName}"/>
 
-                    <h:outputLabel for="number" value="Number:" style="font-weight:bold"/>
-                    <p:inputText id="number" value="#{addContractor.integer}" label="Number">
-                        <f:validateDoubleRange minimum="5" maximum="8" />
-                    </p:inputText>
-                    <p:message for="number" />
-                    <h:outputText value="#{addContractor.integer}" />
+                    <h:outputLabel for="shortName" value="Skrócona nazwa firmy:" style="font-weight:bold"/>
+                    <p:inputText id="shortName" value="#{addContractorBean.shortCoompanyName}"
+                                 label="Skrócona nazwa firmy"> </p:inputText>
+                    <p:message for="shortName"/>
+                    <h:outputText value="#{addContractorBean.shortCoompanyName}"/>
 
-                    <h:outputLabel for="dd" value="Double:" style="font-weight:bold"/>
-                    <p:inputText id="dd" value="#{addContractor.doubleNumber}" converterMessage="Cannot convert to double.">
-                        <f:validateDoubleRange minimum="5.5" maximum="8.5" />
-                    </p:inputText>
-                    <p:message for="dd" />
-                    <h:outputText value="#{addContractor.doubleNumber}" />
+                    <h:outputLabel for="address" value="Adres firmy:" style="font-weight:bold"/>
+                    <p:inputText id="address" value="#{addContractorBean.address}" label="Adres firmy"> </p:inputText>
+                    <p:message for="address"/>
+                    <h:outputText value="#{addContractorBean.address}"/>
 
-                    <h:outputLabel for="money" value="Currency ($):" style="font-weight:bold"/>
-                    <p:inputText id="money" value="#{addContractor.money}" label="Currency">
-                        <f:convertNumber type="currency" currencySymbol="$"/>
-                    </p:inputText>
-                    <p:message for="money" />
-                    <h:outputText value="#{addContractor.money}">
-                        <f:convertNumber  type="currency" currencySymbol="$" />
-                    </h:outputText>
 
-                    <h:outputLabel for="regex" value="Regex (^[a-zA-Z]+$):" style="font-weight:bold"/>
-                    <p:inputText id="regex" value="#{addContractor.regexText}" validatorMessage="Value does not match pattern.">
-                        <f:validateRegex pattern="^[a-zA-Z]+$" />
-                    </p:inputText>
-                    <p:message for="regex" />
-                    <h:outputText value="#{addContractor.regexText}" />
 
-                    <h:outputLabel for="date" value="Date" style="font-weight:bold"/>
-                    <p:inputText id="date" value="#{addContractor.date}" label="Date">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </p:inputText>
-                    <p:message for="date" />
-                    <h:outputText value="#{addContractor.date}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-
-                    <h:outputLabel for="desc" value="Description" style="font-weight:bold"/>
-                    <p:inputTextarea id="desc" value="#{addContractor.description}" required="true" label="Description">
-                        <f:validateLength minimum="3" maximum="10" />
-                    </p:inputTextarea>
-                    <p:message for="desc" />
-                    <h:outputText value="#{addContractor.description}" />
                 </h:panelGrid>
 
                 <p:commandButton value="Non-Ajax" ajax="false" icon="ui-icon-check" validateClient="true" style="margin-right:10px"/>
                 <p:commandButton value="Ajax" update="grid" icon="ui-icon-check" validateClient="true" style="margin-right:10px"/>
-                <p:commandButton value="Partial" update="grid" process="name number" validateClient="true" icon="ui-icon-check" style="margin-right:10px"/>
                 <p:commandButton value="Disabled" ajax="false" icon="ui-icon-check" />
             </p:panel>
         </h:form>
