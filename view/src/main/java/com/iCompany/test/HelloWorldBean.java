@@ -1,6 +1,9 @@
 package com.iCompany.test;
 
+import com.iCompany.user.NewUserService;
+
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 /**
@@ -10,7 +13,14 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 public class HelloWorldBean {
 
+    @ManagedProperty(value = "#{newUserService}")
+    private NewUserService newUserService;
+
     private String testString = "Hello World";
+
+    public void testDB() {
+        newUserService.saveTestUser();
+    }
 
     public String getTestString() {
         return testString;
@@ -18,5 +28,9 @@ public class HelloWorldBean {
 
     public void setTestString(String testString) {
         this.testString = testString;
+    }
+
+    public void setNewUserService(NewUserService newUserService) {
+        this.newUserService = newUserService;
     }
 }

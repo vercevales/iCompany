@@ -13,18 +13,10 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!--Spring dependencies -->
+        <!--Project dependency-->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
+            <groupId>com.iCompany</groupId>
+            <artifactId>repositories</artifactId>
         </dependency>
     </dependencies>
 
