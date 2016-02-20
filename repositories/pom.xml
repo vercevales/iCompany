@@ -12,5 +12,19 @@
     <artifactId>repositories</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <!--Project dependency-->
+        <dependency>
+            <groupId>com.iCompany</groupId>
+            <artifactId>model</artifactId>
+        </dependency>
+
+        <!--Spring Data JPA dependency-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
