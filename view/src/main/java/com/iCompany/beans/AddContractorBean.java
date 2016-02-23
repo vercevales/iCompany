@@ -5,6 +5,7 @@ import javax.faces.bean.ViewScoped;
 
 /**
  * Created by Karol Dziegiel on 15.02.16.
+ *
  */
 @ManagedBean
 @ViewScoped
