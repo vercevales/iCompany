@@ -13,54 +13,102 @@
             <p:panel header="Nowy Kontraktor">
                 <p:messages autoUpdate="true"/>
 
-                <h:panelGrid id="grid" columns="4" cellpadding="5">
-                    <h:outputLabel for="name" value="Nazwa Firmy:" style="font-weight:bold"/>
-                    <p:inputText id="name" value="#{addContractorBean.companyName}" required="true"
-                                 label="Nazwa Firmy"/>
+                <h:panelGrid id="grid" columns="8" cellpadding="5">
+                    <h:outputLabel for="name" value="Nazwa Kontraktora:" style="font-weight:bold"/>
+                    <p:inputText id="name" value="#{addContractorBean.contractorName}" required="true"
+                                 label="Nazwa Kontraktora"/>
                     <p:message for="name" />
-                    <h:outputText value="#{addContractorBean.companyName}"/>
+                    <h:outputText value="#{addContractorBean.contractorName}"/>
 
-                    <h:outputLabel for="shortName" value="Skrócona nazwa firmy:" style="font-weight:bold"/>
-                    <p:inputText id="shortName" value="#{addContractorBean.shortCoompanyName}"
-                                 label="Skrócona nazwa firmy"> </p:inputText>
+                    <h:outputLabel for="shortName" value="Skrócona nazwa :" style="font-weight:bold"/>
+                    <p:inputText id="shortName" value="#{addContractorBean.shortContractorName}"
+                                 label="Skrócona nazwa kontraktora"> </p:inputText>
                     <p:message for="shortName"/>
-                    <h:outputText value="#{addContractorBean.shortCoompanyName}"/>
+                    <h:outputText value="#{addContractorBean.shortContractorName}"/>
 
-                    <h:outputLabel for="address" value="Adres firmy:" style="font-weight:bold"/>
-                    <p:inputText id="address" value="#{addContractorBean.address}" required="true"
-                                 label="Adres firmy"> </p:inputText>
-                    <p:message for="address"/>
-                    <h:outputText value="#{addContractorBean.address}"/>
+                    <h:outputLabel for="street" value="Ulica:" style="font-weight:bold"/>
+                    <p:inputText id="street" value="#{addContractorBean.street}" required="true"
+                                 label="Ulica"> </p:inputText>
+                    <p:message for="street"/>
+                    <h:outputText value="#{addContractorBean.street}"/>
 
-                    <h:outputLabel for="nip" value="NIP firmy:" style="font-weight:bold"/>
+                    <h:outputLabel for="buildingNumber" value="Numer budynku:" style="font-weight:bold"/>
+                    <p:inputText id="buildingNumber" value="#{addContractorBean.buildingNumber}" required="true"
+                                 label="Numer budynku"> </p:inputText>
+                    <p:message for="buildingNumber"/>
+                    <h:outputText value="#{addContractorBean.buildingNumber}"/>
+
+                    <h:outputLabel for="flatNumber" value="Numer lokalu:" style="font-weight:bold"/>
+                    <p:inputText id="flatNumber" value="#{addContractorBean.flatNumber}" required="false"
+                                 label="Ulica"> </p:inputText>
+                    <p:message for="flatNumber"/>
+                    <h:outputText value="#{addContractorBean.flatNumber}"/>
+
+                    <h:outputLabel for="postCode" value="Kod pocztowy:" style="font-weight:bold"/>
+                    <p:inputText id="postCode" value="#{addContractorBean.postCode}" required="true"
+                                 label="Kod pocztowy"> </p:inputText>
+                    <p:message for="postCode"/>
+                    <h:outputText value="#{addContractorBean.postCode}"/>
+
+                    <h:outputLabel for="city" value="Miasto:" style="font-weight:bold"/>
+                    <p:inputText id="city" value="#{addContractorBean.city}" required="true"
+                                 label="Miasto"> </p:inputText>
+                    <p:message for="city"/>
+                    <h:outputText value="#{addContractorBean.city}"/>
+
+                    <h:outputLabel for="province" value="Województwo:" style="font-weight:bold"/>
+                    <p:inputText id="province" value="#{addContractorBean.province}" required="false"
+                                 label="Województwo"> </p:inputText>
+                    <p:message for="province"/>
+                    <h:outputText value="#{addContractorBean.province}"/>
+
+                    <h:outputLabel for="representative" value="Reprezentant:" style="font-weight:bold"/>
+                    <p:inputText id="representative" value="#{addContractorBean.representative}" required="true"
+                                 label="Reprezentant"> </p:inputText>
+                    <p:message for="representative"/>
+                    <h:outputText value="#{addContractorBean.representative}"/>
+
+                    <h:outputLabel for="bankName" value="Nazwa banku:" style="font-weight:bold"/>
+                    <p:inputText id="bankName" value="#{addContractorBean.bankName}" required="true"
+                                 label="Nazwa banku"> </p:inputText>
+                    <p:message for="bankName"/>
+                    <h:outputText value="#{addContractorBean.bankName}"/>
+
+                    <h:outputLabel for="bankAccountNumber" value="Numer Konta Bankowego:" style="font-weight:bold"/>
+                    <p:inputText id="bankAccountNumber" value="#{addContractorBean.bankAccountNumber}" required="true"
+                                 label="Numer Konta Bankowego"> </p:inputText>
+                    <p:message for="bankAccountNumber"/>
+                    <h:outputText value="#{addContractorBean.bankAccountNumber}"/>
+
+                    <h:outputLabel for="nip" value="NIP kontraktora:" style="font-weight:bold"/>
                     <p:inputText id="nip" value="#{addContractorBean.nip}" required="true"
-                                 label="NIP firmy"> </p:inputText>
+                                 label="NIP kontraktora"> </p:inputText>
                     <p:message for="nip"/>
                     <h:outputText value="#{addContractorBean.nip}"/>
 
-                    <h:outputLabel for="regon" value="REGON firmy:" style="font-weight:bold"/>
+                    <h:outputLabel for="regon" value="REGON kontraktora:" style="font-weight:bold"/>
                     <p:inputText id="regon" value="#{addContractorBean.regon}" required="true"
-                                 label="REGON firmy"> </p:inputText>
+                                 label="REGON kontraktora"> </p:inputText>
                     <p:message for="regon"/>
                     <h:outputText value="#{addContractorBean.regon}"/>
 
-                    <h:outputLabel for="krs" value="KRS firmy:" style="font-weight:bold"/>
+                    <h:outputLabel for="krs" value="KRS kontraktora:" style="font-weight:bold"/>
                     <p:inputText id="krs" value="#{addContractorBean.krs}" required="true"
-                                 label="KRS firmy"> </p:inputText>
+                                 label="KRS kontraktora"> </p:inputText>
                     <p:message for="krs"/>
                     <h:outputText value="#{addContractorBean.krs}"/>
 
-                    <h:outputLabel for="telephone" value="Telefon:" style="font-weight:bold"/>
-                    <p:inputText id="telephone" value="#{addContractorBean.telephone}" required="true"
+                    <h:outputLabel for="phoneNumber" value="Telefon:" style="font-weight:bold"/>
+                    <p:inputText id="phoneNumber" value="#{addContractorBean.phoneNumber}" required="true"
                                  label="Telefon"> </p:inputText>
-                    <p:message for="telephone"/>
-                    <h:outputText value="#{addContractorBean.telephone}"/>
+                    <p:message for="phoneNumber"/>
+                    <h:outputText value="#{addContractorBean.phoneNumber}"/>
 
-                    <h:outputLabel for="mail" value="E-mail firmy:" style="font-weight:bold"/>
-                    <p:inputText id="mail" value="#{addContractorBean.mail}" required="true"
-                                 label="E-mail firmy"> </p:inputText>
-                    <p:message for="mail"/>
-                    <h:outputText value="#{addContractorBean.mail}"/>
+                    <h:outputLabel for="email" value="E-email kontraktora:" style="font-weight:bold"/>
+                    <p:inputText id="email" value="#{addContractorBean.email}" required="true"
+                                 label="E-email kontraktora"> </p:inputText>
+                    <p:message for="email"/>
+                    <h:outputText value="#{addContractorBean.email}"/>
 
 
                 </h:panelGrid>

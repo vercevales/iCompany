@@ -1,6 +1,6 @@
-package com.iCompany.controllers;
+package com.iCompany.addContractor.controllers;
 
-import com.iCompany.beans.AddContractorBean;
+import com.iCompany.addContractor.beans.AddContractorBean;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
