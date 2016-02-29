@@ -2,6 +2,7 @@ package com.iCompany.addContractor.beans;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import java.util.Map;
 
 /**
  * Created by Karol Dziegiel on 15.02.16.
@@ -26,6 +27,8 @@ public class AddContractorBean {
     private String krs;
     private String phoneNumber;
     private String email;
+    private Map<String, String> companies;
+    private String company;
 
     public String getContractorName() {
         return contractorName;
@@ -153,5 +156,21 @@ public class AddContractorBean {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Map<String, String> getCompanies() {
+        return companies;
+    }
+
+    public void setCompanies(Map<String, String> companies) {
+        this.companies = companies;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

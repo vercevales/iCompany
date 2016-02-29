@@ -13,7 +13,15 @@
             <p:panel header="Nowy Kontraktor">
                 <p:messages autoUpdate="true"/>
 
-                <h:panelGrid id="grid" columns="8" cellpadding="5">
+                <h:panelGrid id="grid" columns="4" cellpadding="5">
+
+                    <br>
+                        <p:outputLabel for="company" value="Firma: "/>
+                        <p:selectOneMenu id="company" value="#{addContractorBean.company}" style="width:150px">
+                            <f:selectItem itemLabel="Wybierz firmę" itemValue="" noSelectionOption="true"/>
+                            <f:selectItems value="#{addContractorBean.companies}"/>
+                        </p:selectOneMenu>
+                    </br>
                     <h:outputLabel for="name" value="Nazwa Kontraktora:" style="font-weight:bold"/>
                     <p:inputText id="name" value="#{addContractorBean.contractorName}" required="true"
                                  label="Nazwa Kontraktora"/>
